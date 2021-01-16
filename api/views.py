@@ -26,7 +26,7 @@ def run(request):
             data = {'id' : inst.id, 'code' : inst.code, 'lang' : inst.language}
         q.append(inst.id)
         # print(inst.id)
-        requests.post('http://localhost:8001/run/', data = data)
+        requests.post('http://judgeserver.herokuapp.com/run/', data = data)
         # print(out)
         response = serializers.SubmissionSerializer(models.Submission.objects.get(id = inst.id))
         # print(q)

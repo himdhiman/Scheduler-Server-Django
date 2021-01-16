@@ -76,14 +76,25 @@ WSGI_APPLICATION = 'SchedulerServer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'dirtybits',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Himanshu',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dirtybits',
-        'USER': 'postgres',
-        'PASSWORD': 'Himanshu',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'dehep90bc9akup',
+        'USER': 'cygaxhnnutzgjh',
+        'PASSWORD': '0f29573e3b85b693b01465ae7842211c57132ab5b66428bf8bd35d86e17fd004',
+        'HOST': "ec2-3-216-181-219.compute-1.amazonaws.com",
+        'PORT': '5432',
     }
 }
 

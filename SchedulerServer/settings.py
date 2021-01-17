@@ -105,6 +105,8 @@ DATABASES = {
         'USER': os.environ.get('DATABASE_USER'),
         'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
         'HOST': os.environ.get('DATABASE_HOST'),
+        'sslmode' : "verify-full",
+        'sslrootcert' : os.path.join(BASE_DIR, 'key.crt'),
         'PORT': '32722'
     }
 

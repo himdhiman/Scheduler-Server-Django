@@ -87,16 +87,33 @@ WSGI_APPLICATION = 'SchedulerServer.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'dehep90bc9akup',
+#         'USER': 'cygaxhnnutzgjh',
+#         'PASSWORD': '0f29573e3b85b693b01465ae7842211c57132ab5b66428bf8bd35d86e17fd004',
+#         'HOST': "ec2-3-216-181-219.compute-1.amazonaws.com",
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dehep90bc9akup',
-        'USER': 'cygaxhnnutzgjh',
-        'PASSWORD': '0f29573e3b85b693b01465ae7842211c57132ab5b66428bf8bd35d86e17fd004',
-        'HOST': "ec2-3-216-181-219.compute-1.amazonaws.com",
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "ibmclouddb",
+        'USER': 'admin',
+        'PASSWORD': 'HimanshuDhiman',
+        'HOST': "34099c64-bdef-4974-8511-6420cfd4d6e6.68ea2cbd8c8d4c30b5b8450be6b8593a.databases.appdomain.cloud",
+        'sslmode' :"verify-full",
+        'sslrootcert' : "./1575c397-934c-11e9-a1a6-c27ac0347fc3.cert",
+        'PORT': '32722'
     }
 }
+
+
+
+
 
 
 

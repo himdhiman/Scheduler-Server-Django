@@ -101,15 +101,20 @@ WSGI_APPLICATION = 'SchedulerServer.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "ibmclouddb",
-        'USER': 'admin',
-        'PASSWORD': 'HimanshuDhiman',
-        'HOST': "34099c64-bdef-4974-8511-6420cfd4d6e6.68ea2cbd8c8d4c30b5b8450be6b8593a.databases.appdomain.cloud",
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'HOST': os.environ.get('DATABASE_HOST'),
         'sslmode' :"verify-full",
         'sslrootcert' : "./1575c397-934c-11e9-a1a6-c27ac0347fc3.cert",
         'PORT': '32722'
     }
+
 }
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 

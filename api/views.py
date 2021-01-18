@@ -14,22 +14,16 @@ q = deque()
 @api_view(['POST'])
 def run(request):
     body = json.loads(request.body)
-    # print(request.body)
-    # print(body)
     response = serializers.SubmissionSerializer(data = body)
-    # print(response.data)
     if(response.is_valid()):
         inst = response.save()
         if(inst.inputGiven != ""):
-            data = {'id' : inst.id, 'code' : inst.code, 'lang' : inst.language, 'inp' : inst.inputGiven}
+            data = {'id' : inst.id, 'code' : inst.code, 'lang' : inst.language, 'inp' : inst.inputGiven, 'problemId' : inst.problemId}
         else:
-            data = {'id' : inst.id, 'code' : inst.code, 'lang' : inst.language}
+            data = {'id' : inst.id, 'code' : inst.code, 'lang' : inst.language, 'problemId' : inst.problemId}
         q.append(inst.id)
-        # print(inst.id)
         requests.post('https://judgeserver.herokuapp.com/run/', data = data)
-        # print(out)
         response = serializers.SubmissionSerializer(models.Submission.objects.get(id = inst.id))
-        # print(q)
         return Response(response.data)
 
     return Response(response.errors)
